@@ -65,3 +65,7 @@ npm run dev:demo
 | ![知华科技方案咨询二维码](docs/images/zhuatech-wechat-consulting.png) | ![知华科技开发咨询二维码](docs/images/zhuatech-wechat-consulting-2.png) |
 
 关键词：数据质量管理系统、DQM 源码、数据治理平台、数据质量规则、数据问题闭环、Java 数据治理、Vue 数据质量、知华科技。
+
+## 数据集质量评分
+
+`POST /api/admin/quality-score` 对完整性、准确性、一致性、及时性和关键规则失败进行加权评分，生成质量等级与整改清单。低于发布标准的数据集会明确返回阻断标记。
