@@ -69,3 +69,7 @@ npm run dev:demo
 ## 数据集质量评分
 
 `POST /api/admin/quality-score` 对完整性、准确性、一致性、及时性和关键规则失败进行加权评分，生成质量等级与整改清单。低于发布标准的数据集会明确返回阻断标记。
+
+## 数据漂移检测
+
+新增 `POST /api/dqm/insights/data-drift`，监控数据量、空值率、字段分布、结构变更和新鲜度偏离，输出 `STABLE`、`INVESTIGATE` 或 `BLOCK_PIPELINE`。
