@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.dqm.service;
 import cn.zhuatech.dqm.common.BusinessException; import cn.zhuatech.dqm.dto.DqmDto.*; import cn.zhuatech.dqm.model.*; import cn.zhuatech.dqm.repository.*; import org.springframework.stereotype.Service; import org.springframework.transaction.annotation.Transactional; import java.util.*;
 @Service @Transactional(readOnly=true) public class DqmService {
