@@ -73,3 +73,7 @@ npm run dev:demo
 ## 数据漂移检测
 
 新增 `POST /api/dqm/insights/data-drift`，监控数据量、空值率、字段分布、结构变更和新鲜度偏离，输出 `STABLE`、`INVESTIGATE` 或 `BLOCK_PIPELINE`。
+
+## 企业级数据产品发布
+
+新增 `POST /api/enterprise/dqm/data-product-release`，覆盖数据契约、结构、血缘、质量、敏感分类和刷新 SLA，返回 `PUBLISH / REVIEW / BLOCKED`。详见 [数据产品发布说明](docs/ENTERPRISE_DATA_PRODUCT_RELEASE.md)。
