@@ -10,8 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class DataQualityScoreService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result calculate(Request request) {
         int score = Math.max(0, (int) Math.round(request.completeness() * .30 + request.accuracy() * .30
             + request.consistency() * .20 + request.timeliness() * .20 - request.criticalRuleFailures() * 8));
@@ -25,12 +31,18 @@ public class DataQualityScoreService {
         return new Result(request.datasetName(), score, grade, score < 60, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String datasetName,
                           @DecimalMin("0") @DecimalMax("100") double completeness,
                           @DecimalMin("0") @DecimalMax("100") double accuracy,
                           @DecimalMin("0") @DecimalMax("100") double consistency,
                           @DecimalMin("0") @DecimalMax("100") double timeliness,
                           @Min(0) int criticalRuleFailures) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String datasetName, int qualityScore, String grade,
                          boolean releaseBlocked, List<String> actions) {}
 }
