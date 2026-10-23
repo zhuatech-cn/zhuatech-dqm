@@ -1,0 +1,102 @@
+{
+  "slug": "dqm",
+  "title": "数据质量隔离与有效接收率",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "total",
+      "label": "输入记录数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "1000000"
+    },
+    {
+      "key": "invalid",
+      "label": "格式错误记录",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "missing",
+      "label": "缺必填且格式无错记录",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "duplicate",
+      "label": "其余重复记录",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "minimumAcceptance",
+      "label": "最低接收率%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "allowedCritical",
+      "label": "最多关键错误记录",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "criticalInvalid",
+      "label": "错误中关键记录",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "acceptedRows",
+      "label": "有效接收数"
+    },
+    {
+      "key": "quarantinedRows",
+      "label": "建议隔离数"
+    },
+    {
+      "key": "acceptancePct",
+      "label": "原始口径接收率%"
+    }
+  ],
+  "description": "按唯一记录口径拆分无效、缺失与重复数据，计算可接收记录及最低接收率；不把隔离数据从分母删除后虚增质量。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-24",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "total": "1000",
+        "invalid": "20",
+        "missing": "10",
+        "duplicate": "5",
+        "minimumAcceptance": "96",
+        "allowedCritical": "0",
+        "criticalInvalid": "1"
+      }
+    ]
+  }
+}

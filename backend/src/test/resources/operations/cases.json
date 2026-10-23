@@ -1,0 +1,62 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "HOLD",
+      "acceptedRows": "#965"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "criticalInvalid": "0"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "minimumAcceptance": "97",
+      "criticalInvalid": "0"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "invalid": "990"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "criticalInvalid": "31"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "invalid": "0",
+      "missing": "0",
+      "duplicate": "0",
+      "criticalInvalid": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "total": "0"
+    },
+    "expected": {},
+    "error": true
+  }
+]
